@@ -24,12 +24,15 @@ export class UsersController {
       phone,
     );
 
-    return { ok: true, data: response };
+    return response;
+    // return { ok: true, data: response };
   }
 
   @Get('')
   async getUserById(@Query() queryParams: FindOneUserQuery) {
-    console.log(queryParams);
-    return 'hi';
+    const { userId } = queryParams;
+    const response = await this.usersService.getUserById(userId);
+    return response;
+    // return { ok: true, data: response };
   }
 }

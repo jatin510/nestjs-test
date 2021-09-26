@@ -1,11 +1,7 @@
-import { IsNumberString, IsNotEmpty } from 'class-validator';
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class FindOneUserQuery {
   @IsNotEmpty()
-  @IsNumberString()
+  @IsString()
   userId: string;
-
-  @IsNotEmpty()
-  @IsNumberString()
-  name: string;
 }

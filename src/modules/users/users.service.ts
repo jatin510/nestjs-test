@@ -24,4 +24,8 @@ export class UsersService {
       phone,
     });
   }
+
+  async getUserById(id: string) {
+    return await this.usersRepository.findOne({ _id: id });
+  }
 }
